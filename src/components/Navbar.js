@@ -8,13 +8,13 @@ const Navbar = () => (
     <h1 className="logo-text">Space Travelers&apos; Hub</h1>
     <ul>
       <li>
-        <NavLink to="/" activeClassName="active-link" className="link">Rockets</NavLink>
+        <NavLink to="/" activeClassName="active-link" className="link" exact>Rockets</NavLink>
       </li>
       <li>
-        <NavLink to="/missions" activeClassName="active-link" className="link">Missions</NavLink>
+        <NavLink to="/missions" activeClassName="active-link" className="link" exact>Missions</NavLink>
       </li>
       <li>
-        <NavLink to="/myprofile" activeClassName="active-link" className="link">My Profile</NavLink>
+        <NavLink to="/myprofile" activeClassName="active-link" className="link" exact>My Profile</NavLink>
       </li>
     </ul>
   </nav>

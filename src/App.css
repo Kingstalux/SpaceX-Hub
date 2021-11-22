@@ -19,14 +19,15 @@
     list-style: none;
     padding: 0 25px;
   }
+  
+  .link{
+    text-decoration: none;
+    color: #4e98ec;
+  }
+
   .active-link {
     text-decoration: underline;
-    color: red;
-  }
-  .navbar li a {
-    text-decoration: none;
-    color: blue;
-  }
+     }
   
   .logo-img {
       width: 50px;
