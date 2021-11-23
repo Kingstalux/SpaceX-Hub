@@ -43,3 +43,28 @@
   margin: 10px;
 }
 
+.rocket-card {
+  display: flex;
+  padding: 25px;
+  padding-bottom: 10px;
+}
+
+.rocket-card img {
+  width: 15rem;
+  height: 12rem;
+  padding-right: 1.5rem;
+}
+
+.rocket-card h3 {
+  margin-bottom: 1rem;
+}
+
+.rocket-card p {
+  margin-bottom: 1.5rem;
+}
+
+.rocket-btn {
+  color: white;
+  background-color: #007bff;
+  padding: 7.5px;
+}
