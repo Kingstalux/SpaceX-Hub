@@ -10,6 +10,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
+      <hr className="hr" />
       <Routes>
         <Route exact path="/" element={<Rockets />} />
         <Route path="/missions" element={<Missions />} />

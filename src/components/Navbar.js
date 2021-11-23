@@ -8,20 +8,17 @@ const Navbar = () => (
       <img className="logo-img" alt="logo" src={logo} />
       <h1 className="logo-text">Space Travelers&apos; Hub</h1>
     </div>
-    <div>
-      <ul>
-        <li className="link">
-          <NavLink to="/" activeclassname="active-link">Rockets</NavLink>
-        </li>
-        <li className="link">
-          <NavLink to="/missions" activeclassname="active-link">Missions</NavLink>
-        </li>
-        <li className="link">
-          <NavLink to="/myprofile" activeclassname="active-link">My Profile</NavLink>
-        </li>
-      </ul>
-      <hr />
-    </div>
+    <ul>
+      <li>
+        <NavLink to="/" activeclassname="active-link" className="link">Rockets</NavLink>
+      </li>
+      <li className="mission">
+        <NavLink to="/missions" activeclassname="active-link" className="link">Missions</NavLink>
+      </li>
+      <li>
+        <NavLink to="/myprofile" activeclassname="active-link" className="link">My Profile</NavLink>
+      </li>
+    </ul>
   </nav>
 );
 
