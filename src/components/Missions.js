@@ -14,7 +14,7 @@ const Missions = () => {
   const selectedMissions = useSelector(selectMissions);
   return (
     <div>
-      <Table striped bordered hover className="table">
+      <Table striped bordered hover size="sm" className="table">
         <thead>
           <tr>
             <th>Mission</th>
