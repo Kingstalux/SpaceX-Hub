@@ -9,12 +9,17 @@
   display: flex;
   align-items: center;
   padding: 25px;
+  justify-content: space-between;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
 }
 
 .navbar ul {
   display: flex;
   justify-content: center;
-  width: 60%;
   flex-wrap: wrap;
 }
 
@@ -23,7 +28,7 @@
   padding: 0 25px;
 }
 
-.link {
+.link a {
   text-decoration: none;
   color: #4e98ec;
 }
@@ -37,3 +42,4 @@
   height: 50px;
   margin: 10px;
 }
+

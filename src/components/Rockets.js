@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchRockets } from '../redux/rockets/rockets';
 
-const Rockets = () => (
-  <div>
-    <h2>Rockets will go here.</h2>
-  </div>
-);
+export default function Rockets() {
 
-export default Rockets;
+
+  return (
+    <div className="rocket-container">
+      {rocketList}
+    </div>
+  );
+}
