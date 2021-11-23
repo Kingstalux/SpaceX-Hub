@@ -1,6 +1,8 @@
 const FETCH_ROCKETS_BEGIN = 'spacex-hub/rockets/FETCH_ROCKETS_BEGIN';
 const FETCH_ROCKETS_SUCCESS = 'spacex-hub/rockets/FETCH_ROCKETS_SUCCESS';
 const FETCH_ROCKETS_FAILURE = 'spacex-hub/rockets/FETCH_ROCKETS_FAILURE';
+const ROCKETS_BOOKING = 'spacex-hub/rockets/ROCKETS_BOOKING';
+const ROCKETS_CANCELATION = 'spacex-hub/rockets/ROCKETS_BOOKING';
 
 const initialState = {
   rockets: [],
@@ -20,6 +22,16 @@ const fetchRocketsSuccess = (payload) => ({
 const fetchRocketsFailure = (error) => ({
   type: FETCH_ROCKETS_FAILURE,
   payload: { error },
+});
+
+export const bookRocket = (payload) => ({
+  type: ROCKETS_BOOKING,
+  payload,
+});
+
+export const cancelRocket = (payload) => ({
+  type: ROCKETS_CANCELATION,
+  payload,
 });
 
 const rocketApi = 'https://api.spacexdata.com/v3/rockets';
@@ -45,6 +57,7 @@ export function fetchRockets() {
             name: element.rocket_name,
             description: element.description,
             image: element.flickr_images[0],
+            reserve: false,
           };
           rockets.push(rocket);
         });
@@ -76,6 +89,28 @@ const rocketsReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload.error,
         rockets: [],
+      };
+
+    case ROCKETS_BOOKING:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (action.payload - 1 + 1 !== rocket.id) {
+            return rocket;
+          }
+          return { ...rocket, reserve: true };
+        }),
+      };
+
+    case ROCKETS_CANCELATION:
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => {
+          if (action.payload - 1 + 1 !== rocket.id) {
+            return rocket;
+          }
+          return { ...rocket, reserve: false };
+        }),
       };
 
     default:
