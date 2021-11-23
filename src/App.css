@@ -90,6 +90,7 @@
   color: white;
   background-color: #007bff;
   padding: 7.5px;
+  border-radius: 4px;
 }
 
 .rocket-btn:hover {
@@ -106,6 +107,31 @@
 }
 
 hr {
-  border: 0.5px solid grey;
+  border: 0.5px solid rgb(143, 129, 129);
   margin-inline: 25px;
+}
+
+.cancel-rocket {
+  color: grey;
+  border: 1px solid grey;
+  padding: 7.5px;
+  border-radius: 4px;
+}
+
+.cancel-rocket:hover {
+  background-color: grey;
+  color: white;
+  padding: 7.5px;
+  border-radius: 4px;
+}
+
+.cancel-rocket:active {
+  color: grey;
+  border: 1px solid grey;
+  padding: 7.5px;
+  border-radius: 4px;
+}
+
+.hide {
+  display: none;
 }

@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets, bookRocket } from '../redux/rockets/rockets';
+import { v4 as uuidv4 } from 'uuid';
+import { fetchRockets, bookRocket, cancelRocket } from '../redux/rockets/rockets';
 
 export default function Rockets() {
   const dispatch = useDispatch();
@@ -11,30 +12,17 @@ export default function Rockets() {
 
   const reserveRocket = (e) => {
     dispatch(bookRocket(e.target.parentElement.id));
+    document.getElementById(e.target.nextSibling.id).classList.remove('hide');
+    document.getElementById(e.target.id).classList.add('hide');
   };
 
-  const cancelRocket = () => {
-    console.log('cancel reservation');
+  const cancelReserve = (e) => {
+    dispatch(cancelRocket(e.target.parentElement.id));
+    document.getElementById(e.target.id).classList.add('hide');
+    document.getElementById(e.target.previousSibling.id).classList.remove('hide');
   };
-
-  // const reserveBtn =
-  //  <button type="button" className="rocket-btn" onClick={reserveRocket}>Reserve Rocket</button>;
-  // const cancelReserve =
-  //  <button type="button" onClick={reserveRocket}>Cancel reservation</button>;
 
   const rocketsArray = useSelector((state) => state.rocketsReducer.rockets);
-
-  console.log(rocketsArray[0].id);
-
-  let button;
-
-  rocketsArray.forEach((element) => {
-    if (element.reserve !== true) {
-      button = <button type="button" className="rocket-btn" onClick={reserveRocket}>Reserve Rocket</button>;
-    } else {
-      button = <button type="button" onClick={cancelRocket}>Cancel reservation</button>;
-    }
-  });
 
   const rocketList = rocketsArray.map((rocket) => (
     <div key={rocket.id} className="rocket-card">
@@ -42,8 +30,8 @@ export default function Rockets() {
       <div id={rocket.id}>
         <h3>{rocket.name}</h3>
         <p>{rocket.description}</p>
-        {button}
-        {/* {cancelReserve} */}
+        <button type="button" id={uuidv4()} className="rocket-btn" onClick={reserveRocket}>Reserve Rocket</button>
+        <button type="button" id={uuidv4()} className="cancel-rocket hide" onClick={cancelReserve}>Cancel reservation</button>
       </div>
     </div>
   ));

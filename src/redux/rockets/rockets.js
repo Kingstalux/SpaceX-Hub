@@ -2,7 +2,7 @@ const FETCH_ROCKETS_BEGIN = 'spacex-hub/rockets/FETCH_ROCKETS_BEGIN';
 const FETCH_ROCKETS_SUCCESS = 'spacex-hub/rockets/FETCH_ROCKETS_SUCCESS';
 const FETCH_ROCKETS_FAILURE = 'spacex-hub/rockets/FETCH_ROCKETS_FAILURE';
 const ROCKETS_BOOKING = 'spacex-hub/rockets/ROCKETS_BOOKING';
-const ROCKETS_CANCELATION = 'spacex-hub/rockets/ROCKETS_BOOKING';
+const ROCKETS_CANCELATION = 'spacex-hub/rockets/ROCKETS_CANCELATION';
 
 const initialState = {
   rockets: [],
