@@ -31,35 +31,6 @@ function handleErrors(response) {
   return response;
 }
 
-// export function deleteBooksApi(payload) {
-//   return (dispatch) => {
-//     dispatch(fetchBooksBegin());
-//     return fetch(ApiUrl + payload, {
-//       method: 'delete',
-//       body: JSON.stringify({
-//         item_id: payload,
-//       }),
-//       headers: {
-//         'Content-type': 'application/json; charset=UTF-8',
-//       },
-//     })
-//       .then(handleErrors)
-//       .then((res) => res.text())
-//       .then((json) => {
-//         if (json) {
-//           fetch(ApiUrl)
-//             .then(handleErrors)
-//             .then((res) => res.json())
-//             .then((json) => {
-//               dispatch(fetchBooksSuccess(json));
-//               return json;
-//             });
-//         }
-//       })
-//       .catch((error) => dispatch(fetchBooksFailure(error)));
-//   };
-// }
-
 export function fetchRockets() {
   return (dispatch) => {
     dispatch(fetchRocketsBegin());
