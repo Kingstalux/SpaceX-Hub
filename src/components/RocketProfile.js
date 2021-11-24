@@ -7,7 +7,7 @@ export default function RocketProfile() {
   const reservedRockets = rocketsArray.filter((rocket) => rocket.reserve === true);
 
   const rocketProfile = reservedRockets.map((rocket) => (
-    <div key={rocket.id} className="reserve-rocket">
+    <div key={rocket.id} className="reserve-rocket-mission">
       {rocket.name}
     </div>
   ));

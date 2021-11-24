@@ -65,17 +65,11 @@
   text-align: center;
 }
 
-/* .status-active {
-  display: none;
-} */
-
 .rocket-card {
   display: flex;
   padding: 5px;
   padding-bottom: 10px;
   margin: 20px;
-
-  /* margin-inline: 8rem; */
 }
 
 .rocket-card:hover {
@@ -120,8 +114,6 @@
 hr {
   border: 0.5px solid rgb(143, 129, 129);
   margin-inline: 25px;
-
-  /* margin-inline: 7rem; */
 }
 
 .cancel-rocket {
@@ -164,7 +156,8 @@ hr {
   width: 40vw;
 }
 
-.reserve-rocket {
+.reserve-rocket-mission {
   border: 1px solid grey;
   padding: 10px;
+  margin-top: -1px;
 }

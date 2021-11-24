@@ -7,14 +7,17 @@ import Badge from 'react-bootstrap/Badge';
 import { getMissionsFromApi, joinMission, leaveMission } from '../redux/missions/missions';
 
 const selectMissions = (state) => state.missionsReducer;
-
 const Missions = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getMissionsFromApi());
-  }, []);
   const selectedMissions = useSelector(selectMissions);
-  console.log(selectedMissions);
+  const dispatch = useDispatch();
+  const getMissionsData = () => {
+    if (selectedMissions.length === 0) {
+      dispatch(getMissionsFromApi());
+    }
+  };
+  useEffect(() => {
+    getMissionsData();
+  }, []);
   return (
     <div>
       <Table striped bordered hover size="sm" className="table">
@@ -29,7 +32,6 @@ const Missions = () => {
         <tbody>
           {selectedMissions.map((m) => (
             <tr key={uuidv4()}>
-              {console.log(m.isReserved)}
               <td className="mission-name">{m.mission_name}</td>
               <td>{m.mission_description}</td>
               <td className="status" width="100px">
