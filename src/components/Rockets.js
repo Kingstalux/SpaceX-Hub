@@ -6,8 +6,16 @@ import { fetchRockets, bookRocket, cancelRocket } from '../redux/rockets/rockets
 export default function Rockets() {
   const dispatch = useDispatch();
 
+  const rocketsArray = useSelector((state) => state.rocketsReducer.rockets);
+
+  const getItems = () => {
+    if (rocketsArray.length === 0) {
+      dispatch(fetchRockets());
+    }
+  };
+
   useEffect(() => {
-    dispatch(fetchRockets());
+    getItems();
   }, []);
 
   const reserveRocket = (e) => {
@@ -18,17 +26,13 @@ export default function Rockets() {
     dispatch(cancelRocket(e.target.parentElement.id));
   };
 
-  const rocketsArray = useSelector((state) => state.rocketsReducer.rockets);
-
   const rocketList = rocketsArray.map((rocket) => (
     <div key={rocket.id} className="rocket-card">
       <img src={rocket.image} alt="rocket" />
       <div id={rocket.id}>
         <h3>{rocket.name}</h3>
         <p>
-          {rocket.reserve
-            ? <button type="button" className="rocket-batch">RESERVED</button>
-            : < ></>}
+          {rocket.reserve && <button type="button" className="rocket-batch">RESERVED</button>}
           {rocket.description}
         </p>
         {rocket.reserve
