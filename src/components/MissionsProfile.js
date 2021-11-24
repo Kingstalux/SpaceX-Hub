@@ -1,12 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const selectMissions = useSelector((state) => state.missionReducer);
+const selectMissions = (state) => state.missionsReducer;
 
 const MissionsProfile = () => {
-  const joinedMissions = selectMissions.filter((mission) => mission.isReserved === true);
-  const missionProfile = joinedMissions.forEach((mission) => (
-    <div className="reserve-rocket">
+  const selectedMissions = useSelector(selectMissions);
+  const joinedMissions = selectedMissions.filter((mission) => mission.isReserved === true);
+  const missionProfile = joinedMissions.map((mission) => (
+    <div key={mission.mission_id} className="reserve-rocket-mission">
       {mission.mission_name}
     </div>
   ));
