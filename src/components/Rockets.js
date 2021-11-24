@@ -12,14 +12,10 @@ export default function Rockets() {
 
   const reserveRocket = (e) => {
     dispatch(bookRocket(e.target.parentElement.id));
-    document.getElementById(e.target.nextSibling.id).classList.remove('hide');
-    document.getElementById(e.target.id).classList.add('hide');
   };
 
   const cancelReserve = (e) => {
     dispatch(cancelRocket(e.target.parentElement.id));
-    document.getElementById(e.target.id).classList.add('hide');
-    document.getElementById(e.target.previousSibling.id).classList.remove('hide');
   };
 
   const rocketsArray = useSelector((state) => state.rocketsReducer.rockets);
@@ -29,9 +25,15 @@ export default function Rockets() {
       <img src={rocket.image} alt="rocket" />
       <div id={rocket.id}>
         <h3>{rocket.name}</h3>
-        <p>{rocket.description}</p>
-        <button type="button" id={uuidv4()} className="rocket-btn" onClick={reserveRocket}>Reserve Rocket</button>
-        <button type="button" id={uuidv4()} className="cancel-rocket hide" onClick={cancelReserve}>Cancel reservation</button>
+        <p>
+          {rocket.reserve
+            ? <button type="button" className="rocket-batch">RESERVED</button>
+            : <div />}
+          {rocket.description}
+        </p>
+        {rocket.reserve
+          ? <button type="button" id={uuidv4()} className="cancel-rocket" onClick={cancelReserve}>Cancel reservation</button>
+          : <button type="button" id={uuidv4()} className="rocket-btn" onClick={reserveRocket}>Reserve rocket</button>}
       </div>
     </div>
   ));

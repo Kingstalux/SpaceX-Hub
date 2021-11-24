@@ -57,7 +57,6 @@ export function fetchRockets() {
             name: element.rocket_name,
             description: element.description,
             image: element.flickr_images[0],
-            reserve: false,
           };
           rockets.push(rocket);
         });
