@@ -26,9 +26,7 @@ export default function Rockets() {
       <div id={rocket.id}>
         <h3>{rocket.name}</h3>
         <p>
-          {rocket.reserve
-            ? <button type="button" className="rocket-batch">RESERVED</button>
-            : < ></>}
+          {rocket.reserve && <button type="button" className="rocket-batch">RESERVED</button>}
           {rocket.description}
         </p>
         {rocket.reserve
