@@ -8,8 +8,14 @@ export default function Rockets() {
 
   const rocketsArray = useSelector((state) => state.rocketsReducer.rockets);
 
+  const getItems = () => {
+    if (rocketsArray.length === 0) {
+      dispatch(fetchRockets());
+    }
+  };
+
   useEffect(() => {
-    dispatch(fetchRockets());
+    getItems();
   }, []);
 
   const reserveRocket = (e) => {

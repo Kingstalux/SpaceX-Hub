@@ -13,14 +13,9 @@ export default function RocketProfile() {
   ));
 
   return (
-    <div className="profile-container">
-      <div className="rocket-profile">
-        <h2>My Rockets</h2>
-        {rocketProfile}
-      </div>
-      <div className="mission-profile">
-        <h2>My Missions</h2>
-      </div>
+    <div>
+      <h2>My Rockets</h2>
+      {rocketProfile}
     </div>
   );
 }
