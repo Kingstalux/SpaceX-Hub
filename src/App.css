@@ -65,9 +65,9 @@
   text-align: center;
 }
 
-.status-active {
+/* .status-active {
   display: none;
-}
+} */
 
 .rocket-card {
   display: flex;
