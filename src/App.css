@@ -65,7 +65,8 @@
   padding: 5px;
   padding-bottom: 10px;
   margin: 20px;
-  margin-inline: 8rem;
+
+  /* margin-inline: 8rem; */
 }
 
 .rocket-card:hover {
@@ -110,7 +111,8 @@
 hr {
   border: 0.5px solid rgb(143, 129, 129);
   margin-inline: 25px;
-  margin-inline: 7rem;
+
+  /* margin-inline: 7rem; */
 }
 
 .cancel-rocket {
@@ -140,4 +142,5 @@ hr {
   font-size: 10px;
   margin-right: 5px;
   padding: 2px;
+  border-radius: 3px;
 }

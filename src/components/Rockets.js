@@ -28,7 +28,7 @@ export default function Rockets() {
         <p>
           {rocket.reserve
             ? <button type="button" className="rocket-batch">RESERVED</button>
-            : <div />}
+            : < ></>}
           {rocket.description}
         </p>
         {rocket.reserve
