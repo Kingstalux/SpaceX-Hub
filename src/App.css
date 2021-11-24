@@ -37,7 +37,7 @@
   color: #4e98ec;
 }
 
-.active-link {
+.active {
   text-decoration: underline;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .table {
-  width: 80%;
+  width: 96%;
   margin: 10px auto;
 }
 
@@ -59,6 +59,15 @@
 .mission {
   border-right: 2px solid grey;
 }
+
+.status {
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* .status-active {
+  display: none;
+} */
 
 .rocket-card {
   display: flex;
