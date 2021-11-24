@@ -144,3 +144,18 @@ hr {
   padding: 2px;
   border-radius: 3px;
 }
+
+.profile-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 25px;
+}
+
+.profile-container div {
+  width: 30vw;
+}
+
+.reserve-rocket {
+  border: 1px solid grey;
+  padding: 10px;
+}
