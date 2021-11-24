@@ -1,8 +1,9 @@
 import React from 'react';
+import RocketProfile from './RocketProfile';
 
 const Profile = () => (
   <div>
-    <h2>Profile will go here</h2>
+    <RocketProfile />
   </div>
 );
 
