@@ -1,4 +1,3 @@
-// const GET_MISSIONS_FROM_API = 'SpaceX-Hub/missions/GET_MISSIONS_FROM_API';
 const GET_MISSIONS = 'spacex-hub/missions/GET_MISSIONS';
 const JOIN_MISSION = 'spacex-hub/missions/JOIN_MISSION';
 const LEAVE_MISSION = 'spacex-hub/missions/LEAVE_MISSION';
