@@ -4,8 +4,8 @@ import MissionsProfile from './MissionsProfile';
 
 const Profile = () => (
   <div className="profile-container">
-    <RocketProfile />
     <MissionsProfile />
+    <RocketProfile />
   </div>
 );
 
