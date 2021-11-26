@@ -14,9 +14,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - ![Missions Page](./src/images/missions.jpg)
 - ![Profile Page](./src/images/profile.jpg)
 
-## Build with
-- React-Redux
-- React Bootstrap
+## Built With
+
+- ### Major languages
+  - Javascript, CSS
+- ### Frameworks
+  - ReactJS, Redux, React-Redux, React Bootstrap
+- ### Technologies used
+  - Webpack, Babelrc, Linters
 
 ## Getting Started
 

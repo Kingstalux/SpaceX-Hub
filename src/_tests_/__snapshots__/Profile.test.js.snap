@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mission Element Tests renders correctly 1`] = `
+<div
+  className="profile-container"
+>
+  <div>
+    <h2>
+      My Missions
+    </h2>
+  </div>
+  <div>
+    <h2>
+      My Rockets
+    </h2>
+  </div>
+</div>
+`;
