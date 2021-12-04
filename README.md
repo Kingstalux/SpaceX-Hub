@@ -9,10 +9,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [SpaceX Hub](https://spaces-hub-app.herokuapp.com/)
 
 ## Preview App
+![space](https://user-images.githubusercontent.com/85113567/144714943-ee3d5f53-b9b3-489a-9ce6-dc34c1052300.gif)
 
-- ![Rockets Page](./src/images/rockets.jpg)
-- ![Missions Page](./src/images/missions.jpg)
-- ![Profile Page](./src/images/profile.jpg)
+
 
 ## Built With
 
